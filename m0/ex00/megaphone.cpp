@@ -1,17 +1,10 @@
 #include <iostream>
-
-char test1212(char c)
-{
-	if (c >= 'a' && c <= 'z')
-		return (c - 32);
-	return (c);
-}
+#include <string.h>
 
 int main(int argc, char  **argv) 
 {
     int i;
 	int j;
-	char c;
 
 	i = 1;
 	if (argc == 1)
@@ -19,14 +12,15 @@ int main(int argc, char  **argv)
 	while (i < argc)
 	{
 		j = 0;
-		while (argv[i][j] != 0)
+		while (j < strlen(argv[i]))
 		{
-			c = test1212(argv[i][j]);
-			std::cout << c;
+			std::cout << (char)std::toupper(argv[i][j]);
 			++j;
 		}
 		++i;
+		if (i != argc)
+			std::cout << " ";
 	}
-	std::cout << "\n";
+	std::cout << std::endl;
     return 0;
 }
