@@ -22,12 +22,12 @@ FLAGS			= -Wall -Wextra -Werror
 
 OBJ				= $(SRC:.cpp=.o)
 
-CC				= clang++
+CXX				= clang++
 
 HEADER_DIR		= -I./head/get_next_line.h -I./head/minishell.h 
 
 $(NAME) :		$(OBJ)
-				$(CC) $(FLAGS) $(OBJ) -o $(NAME)
+				$(CXX) $(FLAGS) $(OBJ) -o $(NAME)
 
 all :			$(NAME)
 

@@ -61,7 +61,7 @@ std::string truncate(std::string str)
 	return str;
 }
 
-void ft_search(contact carac[8], int i)
+bool	ft_search(contact carac[8], int i)
 {
 	std::string line;
 	int			j;
@@ -78,33 +78,33 @@ void ft_search(contact carac[8], int i)
 		++j;
 	}
 	j = 0;
-	while (true)
+	std::cout << "Select index: ";
+	std::getline(std::cin, line);
+	try
 	{
-		std::cout << "Select index: ";
-		std::getline(std::cin, line);
-		try
-		{
-			index = std::stoi(line);
-		}
-		catch(const std::exception& e)
-		{
-			std::cout << "Error bad index, returning to main" << std::endl;
-			break;
-		}
-		if (index < i)
-		{
-			std::cout << "         " << index << "|";
-			std::cout << truncate(carac[index].get_first_name()) << "|" ;
-			std::cout << truncate(carac[index].get_last_name()) << "|" ;
-			std::cout << truncate(carac[index].get_nickname());
-			std::cout << std::endl;
-		}
-		else
-		{
-			std::cout << "Error bad index, returning to main" << std::endl;
-			break;
-		}
+		index = std::stoi(line);
 	}
+	catch(const std::exception& e)
+	{
+		std::cout << "Error bad index, returning to main" << std::endl;
+		return (false);
+	}
+	if (index < i && index >= 0)
+	{
+		std::cout << "         " << index << "|";
+		std::cout << truncate(carac[index].get_first_name()) << "|" ;
+		std::cout << truncate(carac[index].get_last_name()) << "|" ;
+		std::cout << truncate(carac[index].get_nickname());
+		std::cout << std::endl;
+		std::cout << "Returning to main" << std::endl;
+		return (true);
+	}
+	else
+	{
+		std::cout << "Error bad index, returning to main" << std::endl;
+		return (false);
+	}
+	return (false);
 }
 
 int main()
