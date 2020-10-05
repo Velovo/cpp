@@ -1,116 +1,107 @@
 #include "main.hpp"
 
-void fill_contact(contact *person)
+void fill_contact(contact &person)
 {
-	string str;
+	std::string str;
 
-	cout << "Your first name is:\n";
-	getline(cin, str);
-	person->set_first_name(str);
+	std::cout << "Your first name is:\n";
+	getline(std::cin, str);
+	person.set_first_name(str);
 
-	cout << "Your last name is:\n";
-	getline(cin, str);
-	person->set_last_name(str);
+	std::cout << "Your last name is:\n";
+	getline(std::cin, str);
+	person.set_last_name(str);
 	
-	cout << "Your nickname is:\n";
-	getline(cin, str);
-	person->set_nickname(str);
+	std::cout << "Your nickname is:\n";
+	getline(std::cin, str);
+	person.set_nickname(str);
 	
-	cout << "Your login is:\n";
-	getline(cin, str);
-	person->set_login(str);
+	std::cout << "Your login is:\n";
+	getline(std::cin, str);
+	person.set_login(str);
 	
-	cout << "Your postal address is:\n";
-	getline(cin, str);
-	person->set_postal_address(str);
+	std::cout << "Your postal address is:\n";
+	getline(std::cin, str);
+	person.set_postal_address(str);
 	
-	cout << "Your email address is:\n";
-	getline(cin, str);
-	person->set_email_address(str);
+	std::cout << "Your email address is:\n";
+	getline(std::cin, str);
+	person.set_email_address(str);
 	
-	cout << "Your phone number is:\n";
-	getline(cin, str);
-	person->set_phone_number(str);
+	std::cout << "Your phone number is:\n";
+	getline(std::cin, str);
+	person.set_phone_number(str);
 	
-	cout << "Your birthday date is:\n";
-	getline(cin, str);
-	person->set_birthday_date(str);
+	std::cout << "Your birthday date is:\n";
+	getline(std::cin, str);
+	person.set_birthday_date(str);
 	
-	cout << "Your favorite meal is:\n";
-	getline(cin, str);
-	person->set_favorite_meal(str);
+	std::cout << "Your favorite meal is:\n";
+	getline(std::cin, str);
+	person.set_favorite_meal(str);
 	
-	cout << "Your underwear color is:\n";
-	getline(cin, str);
-	person->set_underwear_color(str);
+	std::cout << "Your underwear color is:\n";
+	getline(std::cin, str);
+	person.set_underwear_color(str);
 	
-	cout << "Your darkest secret is:\n";
-	getline(cin, str);
-	person->set_darkest_secret(str);
+	std::cout << "Your darkest secret is:\n";
+	getline(std::cin, str);
+	person.set_darkest_secret(str);
 }
 
-void writedown(contact *carac[8], int j, string cur)
+std::string truncate(std::string str)
 {
-	int nbr;
+	size_t width = 9;
+	std::string space("          ");
 
-	nbr = strlen(cur.data());
-	if (nbr > 10)
-	{
-		cur[9] = '.';
-		cur[10] = '\0';
-	}
+	if (str.length() > width)
+		return str.substr(0, width) + ".";
 	else
-	{
-		while (10 - nbr > 0)
-		{
-			cout << " ";
-			++nbr;
-		}
-	}
-	cout << cur.data() << "|";
+		str.insert(0, space, 0, width - str.length() + 1);
+	return str;
 }
 
-void benten(contact *carac[8], int j)
+void ft_search(contact carac[8], int i)
 {
-	string cur;
-
-	cur = carac[j]->get_first_name();
-	writedown(carac, j, cur);
-
-	cur = carac[j]->get_last_name();
-	writedown(carac, j, cur);
-
-	cur = carac[j]->get_nickname();
-	writedown(carac, j, cur);
-	cout << "\n";
-}
-
-void ft_search(contact *carac[8], int i)
-{
-	int j;
-	string str;
-	int k;
+	std::string line;
+	int			j;
+	int			index;
 
 	j = 0;
 	while (j < i)
 	{
-		cout << "         " << j << "|";
-		benten(carac, j);
+		std::cout << "         " << j << "|";
+		std::cout << truncate(carac[j].get_first_name()) << "|" ;
+		std::cout << truncate(carac[j].get_last_name()) << "|" ;
+		std::cout << truncate(carac[j].get_nickname());
+		std::cout << std::endl;
 		++j;
 	}
-	while (1)
+	j = 0;
+	while (true)
 	{
-		cout << "Enter index: ";
-		getline(cin, str);
-		k = str.data()[0] - '0';
-		if (k >= 0 && k <= i - 1)
+		std::cout << "Select index: ";
+		std::getline(std::cin, line);
+		try
 		{
-			cout << "         " << k << "|";
-			benten(carac, k);
+			index = std::stoi(line);
+		}
+		catch(const std::exception& e)
+		{
+			std::cout << "Error bad index, returning to main" << std::endl;
+			break;
+		}
+		if (index < i)
+		{
+			std::cout << "         " << index << "|";
+			std::cout << truncate(carac[index].get_first_name()) << "|" ;
+			std::cout << truncate(carac[index].get_last_name()) << "|" ;
+			std::cout << truncate(carac[index].get_nickname());
+			std::cout << std::endl;
 		}
 		else
 		{
-			cout << "Index invalid, returning to main\n";
+			std::cout << "Error bad index, returning to main" << std::endl;
 			break;
 		}
 	}
@@ -118,39 +109,30 @@ void ft_search(contact *carac[8], int i)
 
 int main()
 {
-	contact *carac[8];
-	string line;
+	contact carac[8];
+	std::string line;
 	int i;
 
 	i = 0;
+	std::cout << "Welcome to the phone book, comands are: ADD, SEARCH, EXIT" << std::endl;
 	while (1)
 	{
-		getline(cin, line);
+		std::cout << "phone_book > ";
+		std::getline(std::cin, line);
 		if (strncmp(line.data(), "ADD", 4) == 0)
 		{
 			if (i < 8)
 			{
-				carac[i] = new contact;
 				fill_contact(carac[i]);
 				++i;
 			}
 			else
-				cout << "error: phone book max length is 8 contact" << "\n";	
+				std::cout << "error: phone book max length is 8 contact" << "\n";	
 		}
 		else if (strncmp(line.data(), "SEARCH", 7) == 0)
-		{
 			ft_search(carac, i);
-		}
 		else if (strncmp(line.data(), "EXIT", 5) == 0)
-		{
-			i = i - 1;
-			while (i >= 0)
-			{
-				delete carac[i];
-				--i;
-			}
 			return (0);
-		}
 	}
 	return (0);
 }
