@@ -1,4 +1,6 @@
-#include "main.hpp"
+#include <iostream> 
+#include <string.h>
+#include "contact_class.hpp"
 
 void fill_contact(contact &person)
 {

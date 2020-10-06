@@ -18,7 +18,7 @@ ROAD_S			= $(SRC)
 
 ROAD_O			= $(OBJ)
 
-FLAGS			= -Wall -Wextra -Werror
+CXXFLAGS			= -Wall -Wextra -Werror
 
 OBJ				= $(SRC:.cpp=.o)
 
@@ -27,7 +27,7 @@ CXX				= clang++
 HEADER_DIR		= -I./head/get_next_line.h -I./head/minishell.h 
 
 $(NAME) :		$(OBJ)
-				$(CXX) $(FLAGS) $(OBJ) -o $(NAME)
+				$(CXX) $(CXXFLAGS) $(OBJ) -o $(NAME)
 
 all :			$(NAME)
 

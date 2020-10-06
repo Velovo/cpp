@@ -1,13 +1,12 @@
-#ifndef main_hpp
-# define main_hpp
+#ifndef CONTACT_CLASS_HPP
+# define CONTACT_CLASS_HPP
 
-#include <iostream>
-#include <string.h>
+# include <iostream>
 
 class contact
 {
 	private:
-	
+
 	std::string first_name;
 	std::string last_name;
 	std::string nickname;
@@ -22,7 +21,14 @@ class contact
 
 
 	public:
-	
+
+	// contact(void) {
+	// 	std::cout << "constructor called" <<  std::endl;
+	// }
+	// ~contact(void) {
+	// 	std::cout << "destructor called" << std::endl;
+	// }
+
 	void set_first_name(std::string str) {
 		first_name = str;
 	}
