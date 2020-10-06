@@ -3,8 +3,8 @@
 
 int main(int argc, char  **argv) 
 {
-    int i;
-	int j;
+    int		i;
+	size_t	j;
 
 	i = 1;
 	if (argc == 1)
