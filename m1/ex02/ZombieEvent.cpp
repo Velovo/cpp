@@ -4,6 +4,7 @@
 
 ZombieEvent::ZombieEvent()
 {
+	srand(time(0));
 	return;
 }
 
@@ -45,9 +46,6 @@ void	ZombieEvent::randomChump(void)
 "Wilt", "Wilton", "Win", "Windham", "Winfield", "Winfred", "Winifield", "Winn", "Winnie", "Winny", "Winslow", "Winston", "Winthrop", "Wit", "Wittie", "Witty", "Wolf", "Wolfgang", "Wolfie", "Wolfy", "Wood", "Woodie", 
 "Woodman", "Woodrow", "Woody", "Worden", "Worth", "Worthington", "Worthy", "Wright", "Wyatan", "Wyatt", "Wye", "Wylie", "Wyn", "Wyndham", "Wynn", "Xavier", "Xenos", "Xerxes", "Xever", "Ximenes", "Ximenez", "Xymenes", "Yale", "Yanaton", "Yance", "Yancey", "Yancy", "Yank", "Yankee", "Yard", "Yardley", "Yehudi", "Yehudit", "Yorgo", "Yorgos", "York", "Yorke", "Yorker", "Yul", "Yule", "Yulma", "Yuma", "Yuri", "Yurik", "Yves", "Yvon", "Yvor", "Zaccaria", "Zach", "Zacharia", "Zachariah", "Zacharias", "Zacharie", "Zachary", "Zacherie", "Zachery", "Zack", "Zackariah", "Zak", "Zane", "Zared", "Zeb", "Zebadiah", "Zebedee", "Zebulen", "Zebulon", "Zechariah", "Zed", "Zedekiah", "Zeke", "Zelig", "Zerk", "Zollie", "Zolly"};
 
-	static int i = 0;
-	srand(time(0));
-	Zombie tmp = Zombie(std::string(name[(rand() + i) % 3896]), this->type);
+	Zombie tmp = Zombie(std::string(name[(rand()) % 3896]), this->type);
 	tmp.advert();
-	++i;
 }
