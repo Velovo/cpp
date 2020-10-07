@@ -1,5 +1,5 @@
-#ifndef ZombieEvent_hpp
-# define ZombieEvent_hpp
+#ifndef ZOMBIEEVENT_HPP
+# define ZOMBIEEVENT_HPP
 
 #include <iostream>
 #include "Zombie.hpp"
@@ -12,9 +12,9 @@ class ZombieEvent
     public:
     ZombieEvent();
     ~ZombieEvent();
-    void setZombieType(std::string);
-    Zombie *newZombie(std::string name);
-    void randomChump();
+    void    setZombieType(std::string);
+    Zombie  *newZombie(std::string name);
+    void    randomChump();
 };
 
 #endif

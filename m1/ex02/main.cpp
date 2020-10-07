@@ -1,7 +1,7 @@
 #include "Zombie.hpp"
 #include "ZombieEvent.hpp"
 
-int main(void)
+int		main(void)
 {
 	ZombieEvent event;
 	Zombie		*heap1;

@@ -1,9 +1,9 @@
-#ifndef Zombie_hpp
-# define Zombie_hpp
+#ifndef ZOMBIE_HPP
+# define ZOMBIE
 
 #include <iostream>
 
-class Zombie
+class	Zombie
 {
 	private:
 	std::string type;
@@ -12,7 +12,7 @@ class Zombie
 	public:
 	Zombie(std::string name, std::string type);
 	~Zombie();
-	void advert(void);
+	void	advert(void);
 };
 
 #endif
