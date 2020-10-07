@@ -2,9 +2,10 @@
 
 int main(void)
 {
-	cout << "stack:\n";
+	std::cout << "stack:" << std::endl;
 	ponyOnTheStack("white", "invisible", "chestnut", 150);
-	cout << "\nheap:\n";
+	std::cout << std::endl;
+	std::cout << "heap:" << std::endl;
 	ponyOnTheHeap("brown", "dark", "tobiano", 133);
 
 	//faire un check de leaks

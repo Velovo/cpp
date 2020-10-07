@@ -1,6 +1,6 @@
 #include "Pony.hpp"
 
-void ponyOnTheStack(string mane, string tail, string coat, int height)
+void ponyOnTheStack(std::string mane, std::string tail, std::string coat, int height)
 {
 	Pony stacked;
 
@@ -9,13 +9,13 @@ void ponyOnTheStack(string mane, string tail, string coat, int height)
 	stacked.set_coat(coat);
 	stacked.set_height(height);
 
-	cout << "mane: " << stacked.get_mane() << "\n";
-	cout << "tail: " << stacked.get_tail() << "\n";
-	cout << "coat: " << stacked.get_coat() << "\n";
-	cout << "height: " << stacked.get_height() << "\n";
+	std::cout << "mane: " << stacked.get_mane() << "\n";
+	std::cout << "tail: " << stacked.get_tail() << "\n";
+	std::cout << "coat: " << stacked.get_coat() << "\n";
+	std::cout << "height: " << stacked.get_height() << "\n";
 }
 
-void ponyOnTheHeap(string mane, string tail, string coat, int height)
+void ponyOnTheHeap(std::string mane, std::string tail, std::string coat, int height)
 {
 	Pony *heaped;
 
@@ -26,10 +26,20 @@ void ponyOnTheHeap(string mane, string tail, string coat, int height)
 	heaped->set_coat(coat);
 	heaped->set_height(height);
 
-	cout << "mane: " << heaped->get_mane() << "\n";
-	cout << "tail: " << heaped->get_tail() << "\n";
-	cout << "coat: " << heaped->get_coat() << "\n";
-	cout << "height: " << heaped->get_height() << "\n";
+	std::cout << "mane: " << heaped->get_mane() << "\n";
+	std::cout << "tail: " << heaped->get_tail() << "\n";
+	std::cout << "coat: " << heaped->get_coat() << "\n";
+	std::cout << "height: " << heaped->get_height() << "\n";
 
 	delete heaped;
+}
+
+Pony::Pony(void)
+{
+	std::cout << "Pony created" << std::endl;
+}
+
+Pony::~Pony(void)
+{
+	std::cout << "Pony destroyed" << std::endl;
 }

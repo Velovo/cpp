@@ -3,38 +3,40 @@
 
 #include <iostream>
 
-using namespace std;
 class Pony
 {
 	private:
-	
-	string mane; //criniere
-	string tail; //queue
-	string coat; //pelage
+
+	std::string mane; //criniere
+	std::string tail; //queue
+	std::string coat; //pelage
 	int height; //la taille mdr
 
 	public:
 
-	void set_mane(string str) {
+	Pony();
+	~Pony();
+
+	void set_mane(std::string str) {
 		mane = str;
 	}
-	void set_tail(string str) {
+	void set_tail(std::string str) {
 		tail = str;
 	}
-	void set_coat(string str) {
+	void set_coat(std::string str) {
 		coat = str;
 	}
 	void set_height(int h) {
 		height = h;
 	}
 
-	string get_mane() {
+	std::string get_mane() {
 		return (mane);
 	}
-	string get_tail() {
+	std::string get_tail() {
 		return (tail);
 	}
-	string get_coat() {
+	std::string get_coat() {
 		return (coat);
 	}
 	int get_height() {
@@ -42,7 +44,7 @@ class Pony
 	}
 };
 
-void ponyOnTheStack(string mane, string tail, string coat, int height);
-void ponyOnTheHeap(string mane, string tail, string coat, int height);
+void ponyOnTheStack(std::string mane, std::string tail, std::string coat, int height);
+void ponyOnTheHeap(std::string mane, std::string tail, std::string coat, int height);
 
 #endif
