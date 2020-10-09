@@ -1,4 +1,6 @@
 #include "ZombieHorde.hpp"
+#include <time.h>
+#include <stdlib.h>
 
 ZombieHorde::ZombieHorde(int n)
 {
@@ -8,10 +10,11 @@ ZombieHorde::ZombieHorde(int n)
 "Antonio", "Antonius", "Antons", "Antony", "Any", "Ara", "Araldo", "Yale", "Yanaton", "Yance", "Yancey", "Yancy", "Yank", "Yankee", "Yard", "Yardley", "Yehudi", "Yehudit", "Yorgo", "Yorgos", "York", "Yorke", "Yorker", "Yul", "Yule", "Yulma", "Yuma", "Yuri", "Yurik", "Yves", "Yvon", "Yvor", "Zaccaria", "Zach", "Zacharia", "Zachariah", "Zacharias", "Zacharie", "Zachary", "Zacherie", "Zachery", "Zack", "Zackariah", "Zak", "Zane", "Zared", "Zeb", "Zebadiah", "Zebedee", "Zebulen", "Zebulon", "Zechariah", "Zed", "Zedekiah", "Zeke", "Zelig", "Zerk", "Zollie", "Zolly"};
 	this->zombie = new Zombie[n];
 	this->number = n;
+	--n;
 	while (n >= 0)
 	{
 		this->zombie[n].set_name(std::string(name[(rand()) % 256]));
-		this->zombie[n].set_type(std::string("big"));
+		this->zombie[n].set_type(std::string("horde"));
 		--n;
 	}
 }
@@ -19,4 +22,15 @@ ZombieHorde::ZombieHorde(int n)
 ZombieHorde::~ZombieHorde()
 {
 	delete [] this->zombie;
+}
+
+void ZombieHorde::announce(void)
+{
+	int i = this->number - 1;
+
+	while (i >= 0)
+	{
+		this->zombie[i].advert();
+		--i;
+	}
 }

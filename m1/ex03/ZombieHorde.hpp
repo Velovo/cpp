@@ -5,14 +5,14 @@
 
 class ZombieHorde
 {
-    private:
-    size_t number;
-    Zombie *zombie;
+	private:
+	size_t number;
+	Zombie *zombie;
 
-    public:
-    ZombieHorde(int n);
-    ~ZombieHorde();
-    std::string get_random_name(void);
+	public:
+	ZombieHorde(int n);
+	~ZombieHorde();
+	void announce(void);
 };
 
 #endif
