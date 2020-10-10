@@ -34,7 +34,7 @@ int main(int argc, char **argv)
 	while (std::getline(in._filein, buffer))
 	{
 		findAndReplaceAll(buffer, search, replace);
-		out._fileout << buffer << std::endl;
+		out._fileout << buffer;
 	}
 	return (0);
 }
