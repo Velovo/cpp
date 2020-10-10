@@ -19,6 +19,8 @@ int		main(void)
 	delete heap2;
 	event.randomChump();
 	heap2 = event.newZombie(std::string("heap2"));
+	heap1->advert();
 	delete heap1;
+	heap2->advert();
 	delete heap2;
 }

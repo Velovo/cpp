@@ -1,11 +1,20 @@
 #include "main.hpp"
+#include <string.h>
 
-int error(int argc)
+int error(int argc, char **argv)
 {
 	if (argc != 4)
 	{
 		std::cout << "Error: don't have a good number of arguments, expected 4" << std::endl;
 		return (1);
+	}
+	for (int i = 1; i <= 3; ++i)
+	{
+		if (strlen(argv[i]) == 0)
+		{
+			std::cout << "Error: expecting non null string as input" << std::endl;
+			return (1);
+		}
 	}
 	return (0);
 }
@@ -24,7 +33,7 @@ void findAndReplaceAll(std::string &data, std::string search, std::string replac
 
 int main(int argc, char **argv)
 {
-	if (error(argc) == 1)
+	if (error(argc, argv) == 1)
 		return (1);
 	Readfile in(argv[1]);
 	Writefile out(in.getFilename() + ".replace");

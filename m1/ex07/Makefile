@@ -1,8 +1,8 @@
 NAME		= sed2
 
-SRC			=	./main.cpp	\
-				./readfile.cpp	\
-				./writefile.cpp	\
+SRC			=	./srcs/main.cpp	\
+				./srcs/readfile.cpp	\
+				./srcs/writefile.cpp	\
 
 ROAD_S		= $(SRC)
 

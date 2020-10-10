@@ -1,12 +1,13 @@
 #include "writefile.hpp"
+#include <stdlib.h>
 
 Writefile::Writefile(std::string filename)
 {
 	this->filename = filename;
 
-	this->_fileout.open(filename, std::fstream::out | std::fstream::app);
+	this->_fileout.open(filename.data(), std::fstream::out | std::fstream::app);
 	this->_fileout.close();
-	this->_fileout.open(filename, std::fstream::out);
+	this->_fileout.open(filename.data(), std::fstream::out);
 
 	if (this->_fileout.fail())
 	{

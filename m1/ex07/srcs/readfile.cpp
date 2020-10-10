@@ -1,9 +1,10 @@
 #include "readfile.hpp"
+#include <stdlib.h>
 
 Readfile::Readfile(std::string filename)
 {
 	this->filename = filename;
-	this->_filein.open(filename, std::fstream::in);
+	this->_filein.open(filename.data(), std::fstream::in);
 
 	if (this->_filein.fail())
 	{
@@ -15,7 +16,6 @@ Readfile::Readfile(std::string filename)
 Readfile::~Readfile()
 {
 	this->_filein.close();
-		// this->_fileout.close();
 }
 
 std::string Readfile::readline(void)

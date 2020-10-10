@@ -3,38 +3,36 @@
 
 void	Zombie::advert()
 {
-	std::cout << "<" << this->name << " (" << this->type << ")> Braiiiiiiinnnssss ..." << std::endl;
+	std::cout << "<" << this->_name << " (" << this->_type << ")> Braiiiiiiinnnssss ..." << std::endl;
 }
 
-Zombie::Zombie(std::string name, std::string type)
+Zombie::Zombie(std::string name, std::string type) : _name(name), _type(type)
 {
-	this->name = name;
-	this->type = type;
 	std::cout << "sand . . . and the sun ARGHHHH IT BURN . . ." << std::endl;
 	// std::cout << this->name << " was born with type: " << this->type << std::endl;
 }
 
 Zombie::~Zombie()
 {
-	std::cout << this->name << " died : (" << std::endl;
+	std::cout << this->_name << " died : (" << std::endl;
 }
 
 void Zombie::set_type(std::string type)
 {
-	this->type = type;
+	this->_type = type;
 }
 
 void Zombie::set_name(std::string name)
 {
-	this->name = name;
+	this->_name = name;
 }
 
 std::string Zombie::get_type(void)
 {
-	return (this->type);
+	return (this->_type);
 }
 
 std::string Zombie::get_name(void)
 {
-	return (this->name);
+	return (this->_name);
 }
