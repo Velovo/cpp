@@ -26,8 +26,8 @@ int main(int argc, char **argv)
 {
 	if (error(argc) == 1)
 		return (1);
-	File in(argv[1], true);
-	File out(in.getFilename() + ".replace", false);
+	Readfile in(argv[1]);
+	Writefile out(in.getFilename() + ".replace");
 	std::string search = std::string(argv[2]);
 	std::string replace = std::string(argv[3]);
 	std::string buffer;

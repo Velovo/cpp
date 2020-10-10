@@ -2,6 +2,7 @@
 # define MAIN_HPP
 
 #include <iostream>
-#include "file.hpp"
+#include "readfile.hpp"
+#include "writefile.hpp"
 
 #endif
