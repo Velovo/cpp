@@ -17,10 +17,11 @@ Fixed::Fixed(const Fixed &fixed)
 	this->setRawBits(fixed.getRawBits());
 }
 
-void Fixed::operator=(const Fixed &fixed)
+Fixed &Fixed::operator=(const Fixed &fixed)
 {
 	std::cout << "Assignation operator called" << std::endl;
 	this->setRawBits(fixed.getRawBits());
+	return (*this);
 }
 
 int		Fixed::getRawBits(void) const
