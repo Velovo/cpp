@@ -30,10 +30,11 @@ Fixed::Fixed(const float n)
 	this->_fixed_p = roundf(n * (1 << this->_n_bit));
 }
 
-void Fixed::operator=(const Fixed &fixed)
+Fixed &Fixed::operator=(const Fixed &fixed)
 {
 	std::cout << "Assignation operator called" << std::endl;
 	this->setRawBits(fixed.getRawBits());
+	return (*this);
 }
 
 std::ostream &operator<<(std::ostream &out, const Fixed &fixed)
