@@ -26,7 +26,7 @@ FragTrap::FragTrap(const FragTrap &fragtrap)
 	std::cout << "Je me presente, je suis un robot multifonction CL4P-TP, mais mes amis m'apelle " << this->_name << " enfin m'appelleraient s'il en restait encore un en vie, ou si j'en avais" << std::endl;
 }
 
-FragTrap FragTrap::operator=(const FragTrap &fragtrap)
+FragTrap &FragTrap::operator=(const FragTrap &fragtrap)
 {
 	std::srand(std::time(nullptr));
 	this->_hit_points = fragtrap._hit_points;
@@ -44,12 +44,12 @@ FragTrap FragTrap::operator=(const FragTrap &fragtrap)
 
 void FragTrap::rangedAttack(const std::string &target)
 {
-	std::cout << "FR4G-TP " << this->_name << " attaque " << target << " à distance, causant " << this->_ranged_attack_damage << " points de dégâts !" << std::endl;
+	std::cout << "FR4G-TP " << this->_name << " EXPLOSE " << target << " à distance, causant " << this->_ranged_attack_damage << " points de dégâts !" << std::endl;
 }
 
 void FragTrap::meleeAttack(const std::string &target)
 {
-	std::cout << "FR4G-TP " << this->_name << " attaque " << target << " au corps-à-corps, causant " << this->_melee_attack_damage << " points de dégâts !" << std::endl;
+	std::cout << "FR4G-TP " << this->_name << " EXPLOSE " << target << " au corps-à-corps, causant " << this->_melee_attack_damage << " points de dégâts !" << std::endl;
 }
 
 void FragTrap::takeDamage(size_t amount)

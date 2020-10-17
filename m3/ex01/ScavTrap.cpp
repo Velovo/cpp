@@ -23,10 +23,10 @@ ScavTrap::ScavTrap(const ScavTrap &scav)
 	this->_melee_attack_damage = scav._melee_attack_damage;
 	this->_ranged_attack_damage = scav._ranged_attack_damage;
 	this->_armor_damage_reduction = scav._armor_damage_reduction;
-	std::cout << "Je me presente, je suis un robot multifonction CL4P-TP, mais mes amis m'apelle " << this->_name << " enfin m'appelleraient s'il en restait encore un en vie, ou si j'en avais" << std::endl;
+	std::cout << "Salut l'ami, je suis le gardien de ces lieux, mon nom est " << this->_name << " entre si tu l'ose" << std::endl;
 }
 
-ScavTrap ScavTrap::operator=(const ScavTrap &scavtrap)
+ScavTrap &ScavTrap::operator=(const ScavTrap &scavtrap)
 {
 	std::srand(std::time(nullptr));
 	this->_hit_points = scavtrap._hit_points;
@@ -38,7 +38,7 @@ ScavTrap ScavTrap::operator=(const ScavTrap &scavtrap)
 	this->_melee_attack_damage = scavtrap._melee_attack_damage;
 	this->_ranged_attack_damage = scavtrap._ranged_attack_damage;
 	this->_armor_damage_reduction = scavtrap._armor_damage_reduction;
-	std::cout << "Je me presente, je suis un robot multifonction CL4P-TP, mais mes amis m'apelle " << this->_name << " enfin m'appelleraient s'il en restait encore un en vie, ou si j'en avais" << std::endl;
+	std::cout << "Salut l'ami, je suis le gardien de ces lieux, mon nom est " << this->_name << " entre si tu l'ose" << std::endl;
 	return (*this);
 }
 
