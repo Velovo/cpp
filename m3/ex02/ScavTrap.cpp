@@ -1,8 +1,17 @@
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap(const std::string &name) : _hit_points(100), _max_hit_points(100), _energy_points(50), _max_energy_point(50), _level(1), _name(name), _melee_attack_damage(20), _ranged_attack_damage(15), _armor_damage_reduction(3)
+ScavTrap::ScavTrap(const std::string &name)
 {
 	std::srand(std::time(nullptr));
+	this->_hit_points = 100;
+	this->_max_hit_points = 100;
+	this->_energy_points = 50;
+	this->_max_energy_point = 50;
+	this->_level = 1;
+	this->_name = name;
+	this->_melee_attack_damage = 20;
+	this->_ranged_attack_damage = 15;
+	this->_armor_damage_reduction = 3;
 	std::cout << "Salut l'ami, je suis le gardien de ces lieux, mon nom est " << this->_name << " entre si tu l'ose" << std::endl;
 }
 
@@ -54,7 +63,7 @@ void ScavTrap::meleeAttack(const std::string &target)
 
 void ScavTrap::takeDamage(size_t amount)
 {
-	if ((amount - this->_armor_damage_reduction) < this->_hit_points)
+	if ((amount - (size_t)this->_armor_damage_reduction) < (size_t)this->_hit_points)
 	{
 		std::cout << this->_name << ": PROTEGE MOI SBIRE" << std::endl;
 		this->_hit_points = this->_hit_points - (amount - this->_armor_damage_reduction);
@@ -69,7 +78,7 @@ void ScavTrap::takeDamage(size_t amount)
 void ScavTrap::beRepaired(size_t amount)
 {
 	std::cout << this->_name << ": Merci Dr Zed" << std::endl;
-	if (this->_hit_points + amount <= this->_max_hit_points)
+	if ((size_t)this->_hit_points + amount <= (size_t)this->_max_hit_points)
 		this->_hit_points = this->_hit_points + amount;
 	else
 		this->_hit_points = this->_max_hit_points;

@@ -54,7 +54,7 @@ void FragTrap::meleeAttack(const std::string &target)
 
 void FragTrap::takeDamage(size_t amount)
 {
-	if ((amount - this->_armor_damage_reduction) < this->_hit_points)
+	if ((amount - (size_t)this->_armor_damage_reduction) < (size_t)this->_hit_points)
 	{
 		std::cout << this->_name << ": PROTEGE MOI SBIRE" << std::endl;
 		this->_hit_points = this->_hit_points - (amount - this->_armor_damage_reduction);
@@ -69,7 +69,7 @@ void FragTrap::takeDamage(size_t amount)
 void FragTrap::beRepaired(size_t amount)
 {
 	std::cout << this->_name << ": Merci Dr Zed" << std::endl;
-	if (this->_hit_points + amount <= this->_max_hit_points)
+	if ((size_t)this->_hit_points + (size_t)amount <= (size_t)this->_max_hit_points)
 		this->_hit_points = this->_hit_points + amount;
 	else
 		this->_hit_points = this->_max_hit_points;

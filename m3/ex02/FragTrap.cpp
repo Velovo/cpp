@@ -1,8 +1,17 @@
 #include "FragTrap.hpp"
 
-FragTrap::FragTrap(const std::string &name) : _hit_points(100), _max_hit_points(100), _energy_points(100), _max_energy_point(100), _level(1), _name(name), _melee_attack_damage(30), _ranged_attack_damage(20), _armor_damage_reduction(5)
+FragTrap::FragTrap(const std::string &name)
 {
 	std::srand(std::time(nullptr));
+	this->_hit_points = 100;
+	this->_max_hit_points = 100;
+	this->_energy_points = 100;
+	this->_max_energy_point = 100;
+	this->_level = 1;
+	this->_name = name;
+	this->_melee_attack_damage = 30;
+	this->_ranged_attack_damage = 20;
+	this->_armor_damage_reduction = 5;
 	std::cout << "Je me presente, je suis un robot multifonction CL4P-TP, mais mes amis m'apelle " << this->_name << " enfin m'appelleraient s'il en restait encore un en vie, ou si j'en avais" << std::endl;
 }
 
@@ -54,7 +63,7 @@ void FragTrap::meleeAttack(const std::string &target)
 
 void FragTrap::takeDamage(size_t amount)
 {
-	if ((amount - this->_armor_damage_reduction) < this->_hit_points)
+	if ((amount - (size_t)this->_armor_damage_reduction) < (size_t)this->_hit_points)
 	{
 		std::cout << this->_name << ": PROTEGE MOI SBIRE" << std::endl;
 		this->_hit_points = this->_hit_points - (amount - this->_armor_damage_reduction);
@@ -69,7 +78,7 @@ void FragTrap::takeDamage(size_t amount)
 void FragTrap::beRepaired(size_t amount)
 {
 	std::cout << this->_name << ": Merci Dr Zed" << std::endl;
-	if (this->_hit_points + amount <= this->_max_hit_points)
+	if ((size_t)this->_hit_points + amount <= (size_t)this->_max_hit_points)
 		this->_hit_points = this->_hit_points + amount;
 	else
 		this->_hit_points = this->_max_hit_points;

@@ -2,20 +2,10 @@
 # define FRAGTRAP_HPP
 
 # include <iostream>
+# include "ClapTrap.hpp"
 
-class FragTrap
+class FragTrap : protected ClapTrap
 {
-	private:
-	int			_hit_points;
-	int			_max_hit_points;
-	int			_energy_points;
-	int			_max_energy_point;
-	size_t		_level;
-	std::string	_name;
-	int			_melee_attack_damage;
-	int			_ranged_attack_damage;
-	int			_armor_damage_reduction;
-
 	public:
 	FragTrap(const std::string &name);
 	~FragTrap();
