@@ -54,6 +54,11 @@ void FragTrap::meleeAttack(const std::string &target)
 
 void FragTrap::takeDamage(size_t amount)
 {
+	if (amount < (size_t)this->_armor_damage_reduction)
+	{
+		std::cout << "AHAHA YOUR ATTACKS ARE USELESS" << std::endl;
+		return ;
+	}
 	if ((amount - (size_t)this->_armor_damage_reduction) < (size_t)this->_hit_points)
 	{
 		std::cout << this->_name << ": PROTEGE MOI SBIRE" << std::endl;

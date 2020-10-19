@@ -16,8 +16,6 @@ class NinjaTrap : virtual public ClapTrap
 	NinjaTrap &operator=(const NinjaTrap &ninjatrap);
 	int		rangedAttack(const std::string &target);
 	int		meleeAttack(const std::string &target);
-	void	takeDamage(size_t amount);
-	void	beRepaired(size_t amount);
 	void	ninjaShoebox(FragTrap &fragtrap);
 	void	ninjaShoebox(ScavTrap &scavtrap);
 	void	ninjaShoebox(NinjaTrap &ninjatrap);

@@ -21,6 +21,8 @@ class ClapTrap
 	~ClapTrap();
 	ClapTrap(const ClapTrap &claptrap);
 	ClapTrap &operator=(const ClapTrap &claptrap);
+	void takeDamage(size_t amount);
+	void beRepaired(size_t amount);
 };
 
 #endif

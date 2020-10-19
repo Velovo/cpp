@@ -13,8 +13,6 @@ class FragTrap : public ClapTrap
 	FragTrap &operator=(const FragTrap &fragtrap);
 	void rangedAttack(const std::string &target);
 	void meleeAttack(const std::string &target);
-	void takeDamage(size_t amount);
-	void beRepaired(size_t amount);
 	void vaulthunter_dot_exe(const std::string &target);
 };
 

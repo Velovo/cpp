@@ -76,29 +76,6 @@ void ScavTrap::meleeAttack(const std::string &target)
 	std::cout << "FR4G-TP " << this->_name << " attaque " << target << " au corps-à-corps, causant " << this->_melee_attack_damage << " points de dégâts !" << std::endl;
 }
 
-void ScavTrap::takeDamage(size_t amount)
-{
-	if ((amount - (size_t)this->_armor_damage_reduction) < (size_t)this->_hit_points)
-	{
-		std::cout << this->_name << ": PROTEGE MOI SBIRE" << std::endl;
-		this->_hit_points = this->_hit_points - (amount - this->_armor_damage_reduction);
-	}
-	else
-	{
-		std::cout << this->_name << ": SBIRE JE NE PEUX ENCAISSER PLUS" << std::endl;
-		this->_hit_points = 0;
-	}
-}
-
-void ScavTrap::beRepaired(size_t amount)
-{
-	std::cout << this->_name << ": Merci Dr Zed" << std::endl;
-	if ((size_t)this->_hit_points + amount <= (size_t)this->_max_hit_points)
-		this->_hit_points = this->_hit_points + amount;
-	else
-		this->_hit_points = this->_max_hit_points;
-}
-
 void ScavTrap::challengeNewcomer(const std::string &target)
 {
 	const char* challenge[] = {

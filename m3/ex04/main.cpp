@@ -13,4 +13,5 @@ int main(void)
 	omega.rangedAttack("Vault Hunter");
 	omega.ninjaShoebox(cobaye);
 	omega.vaulthunter_dot_exe(cobaye.getname());
+	omega.takeDamage(1);
 }

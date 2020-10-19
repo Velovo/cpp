@@ -13,8 +13,6 @@ class ScavTrap : public ClapTrap
 	ScavTrap &operator=(const ScavTrap &scavtrap);
 	void rangedAttack(const std::string &target);
 	void meleeAttack(const std::string &target);
-	void takeDamage(size_t amount);
-	void beRepaired(size_t amount);
 	void challengeNewcomer(const std::string &target);
 };
 

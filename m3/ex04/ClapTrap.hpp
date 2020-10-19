@@ -22,6 +22,8 @@ class ClapTrap
 	ClapTrap(const ClapTrap &claptrap);
 	ClapTrap &operator=(const ClapTrap &claptrap);
 	std::string getname();
+	void takeDamage(size_t amount);
+	void beRepaired(size_t amount);
 };
 
 #endif

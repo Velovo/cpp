@@ -10,7 +10,7 @@ SuperTrap::SuperTrap()
 	this->_name = "";
 	this->_melee_attack_damage = 60;
 	this->_ranged_attack_damage = 20;
-	this->_armor_damage_reduction = 5;
+	this->_armor_damage_reduction = 6;
 	std::cout << "MY NAME IS " << this->_name << " AND I AM THE BEST OF ALL" << std::endl;
 }
 
