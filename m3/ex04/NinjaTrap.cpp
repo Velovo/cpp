@@ -1,5 +1,20 @@
 #include "NinjaTrap.hpp"
 
+NinjaTrap::NinjaTrap()
+{
+	std::srand(std::time(nullptr));
+	this->_hit_points = 60;
+	this->_max_hit_points = 60;
+	this->_energy_points = 120;
+	this->_max_energy_point = 120;
+	this->_level = 1;
+	this->_name = std::string();
+	this->_melee_attack_damage = 60;
+	this->_ranged_attack_damage = 5;
+	this->_armor_damage_reduction = 0;
+	std::cout << "I am an Interplanetary Ninja Assassin Claptrap aka " << this->_name << " watch your back" << std::endl;
+}
+
 NinjaTrap::NinjaTrap(const std::string &name)
 {
 	std::srand(std::time(nullptr));
@@ -86,7 +101,7 @@ void NinjaTrap::beRepaired(size_t amount)
 		this->_hit_points = this->_max_hit_points;
 }
 
-void NinjaTrap::ninjaShoebox(FragTrap &fragtrap) //need un getteur de name
+void NinjaTrap::ninjaShoebox(FragTrap &fragtrap)
 {
     const char *attacks[] = {
         " It looks like you're writing a suicide note. Would you like help?",

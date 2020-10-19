@@ -4,15 +4,16 @@
 # include <iostream>
 # include "ClapTrap.hpp"
 
-class FragTrap : public ClapTrap
+class FragTrap : virtual public ClapTrap
 {
 	public:
+	FragTrap();
 	FragTrap(const std::string &name);
 	~FragTrap();
 	FragTrap(const FragTrap &fragtrap);
 	FragTrap &operator=(const FragTrap &fragtrap);
-	void rangedAttack(const std::string &target);
-	void meleeAttack(const std::string &target);
+	int rangedAttack(const std::string &target);
+	int meleeAttack(const std::string &target);
 	void takeDamage(size_t amount);
 	void beRepaired(size_t amount);
 	void vaulthunter_dot_exe(const std::string &target);

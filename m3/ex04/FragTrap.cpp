@@ -1,5 +1,20 @@
 #include "FragTrap.hpp"
 
+FragTrap::FragTrap()
+{
+	std::srand(std::time(nullptr));
+	this->_hit_points = 100;
+	this->_max_hit_points = 100;
+	this->_energy_points = 100;
+	this->_max_energy_point = 100;
+	this->_level = 1;
+	this->_name = std::string();
+	this->_melee_attack_damage = 30;
+	this->_ranged_attack_damage = 20;
+	this->_armor_damage_reduction = 5;
+	std::cout << "Je me presente, je suis un robot multifonction CL4P-TP, mais mes amis m'apelle " << this->_name << " enfin m'appelleraient s'il en restait encore un en vie, ou si j'en avais" << std::endl;
+}
+
 FragTrap::FragTrap(const std::string &name)
 {
 	std::srand(std::time(nullptr));
@@ -51,14 +66,16 @@ FragTrap &FragTrap::operator=(const FragTrap &fragtrap)
 	return (*this);
 }
 
-void FragTrap::rangedAttack(const std::string &target)
+int FragTrap::rangedAttack(const std::string &target)
 {
 	std::cout << "FR4G-TP " << this->_name << " EXPLOSE " << target << " à distance, causant " << this->_ranged_attack_damage << " points de dégâts !" << std::endl;
+	return (this->_ranged_attack_damage);
 }
 
-void FragTrap::meleeAttack(const std::string &target)
+int	FragTrap::meleeAttack(const std::string &target)
 {
 	std::cout << "FR4G-TP " << this->_name << " EXPLOSE " << target << " au corps-à-corps, causant " << this->_melee_attack_damage << " points de dégâts !" << std::endl;
+	return (this->_melee_attack_damage);
 }
 
 void FragTrap::takeDamage(size_t amount)

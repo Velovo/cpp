@@ -1,5 +1,20 @@
 #include "ScavTrap.hpp"
 
+ScavTrap::ScavTrap()
+{
+	std::srand(std::time(nullptr));
+	this->_hit_points = 100;
+	this->_max_hit_points = 100;
+	this->_energy_points = 50;
+	this->_max_energy_point = 50;
+	this->_level = 1;
+	this->_name = std::string();
+	this->_melee_attack_damage = 20;
+	this->_ranged_attack_damage = 15;
+	this->_armor_damage_reduction = 3;
+	std::cout << "Salut l'ami, je suis le gardien de ces lieux, mon nom est " << this->_name << " entre si tu l'ose" << std::endl;
+}
+
 ScavTrap::ScavTrap(const std::string &name)
 {
 	std::srand(std::time(nullptr));
