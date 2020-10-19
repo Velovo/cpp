@@ -21,6 +21,7 @@ class ClapTrap
 	~ClapTrap();
 	ClapTrap(const ClapTrap &claptrap);
 	ClapTrap &operator=(const ClapTrap &claptrap);
+	std::string getname();
 };
 
 #endif

@@ -50,3 +50,9 @@ ClapTrap &ClapTrap::operator=(const ClapTrap &claptrap)
 	this->_armor_damage_reduction = claptrap._armor_damage_reduction;
 	return (*this);
 }
+
+std::string ClapTrap::getname()
+{
+	return (std::string(this->_name));
+}
+
