@@ -68,12 +68,12 @@ ScavTrap &ScavTrap::operator=(const ScavTrap &scavtrap)
 
 void ScavTrap::rangedAttack(const std::string &target)
 {
-	std::cout << "FR4G-TP " << this->_name << " attaque " << target << " à distance, causant " << this->_ranged_attack_damage << " points de dégâts !" << std::endl;
+	std::cout << "SC4V-TP " << this->_name << " attaque " << target << " à distance, causant " << this->_ranged_attack_damage << " points de dégâts !" << std::endl;
 }
 
 void ScavTrap::meleeAttack(const std::string &target)
 {
-	std::cout << "FR4G-TP " << this->_name << " attaque " << target << " au corps-à-corps, causant " << this->_melee_attack_damage << " points de dégâts !" << std::endl;
+	std::cout << "SC4V-TP " << this->_name << " attaque " << target << " au corps-à-corps, causant " << this->_melee_attack_damage << " points de dégâts !" << std::endl;
 }
 
 void ScavTrap::challengeNewcomer(const std::string &target)
@@ -87,5 +87,4 @@ void ScavTrap::challengeNewcomer(const std::string &target)
 	};
 
 	std::cout << this->_name << " propose a " << target << challenge[((std::rand() + (unsigned long)this) % 5)] << std::endl;
-
 }
