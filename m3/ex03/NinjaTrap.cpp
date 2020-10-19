@@ -86,7 +86,7 @@ void NinjaTrap::beRepaired(size_t amount)
 		this->_hit_points = this->_max_hit_points;
 }
 
-void NinjaTrap::ninjaShoebox(FragTrap &fragtrap) //need un getteur de name
+void NinjaTrap::ninjaShoebox(FragTrap &fragtrap)
 {
     const char *attacks[] = {
         " It looks like you're writing a suicide note. Would you like help?",
