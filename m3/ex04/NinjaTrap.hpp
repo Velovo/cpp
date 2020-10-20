@@ -5,6 +5,8 @@
 # include "FragTrap.hpp"
 # include "ScavTrap.hpp"
 # include <iostream>
+# include <cstdlib>
+# include <ctime>
 
 class NinjaTrap : virtual public ClapTrap
 {

@@ -2,7 +2,7 @@
 
 NinjaTrap::NinjaTrap()
 {
-	std::srand(std::time(nullptr));
+	std::srand(std::time(0));
 	this->_hit_points = 60;
 	this->_max_hit_points = 60;
 	this->_energy_points = 120;
@@ -17,7 +17,7 @@ NinjaTrap::NinjaTrap()
 
 NinjaTrap::NinjaTrap(const std::string &name)
 {
-	std::srand(std::time(nullptr));
+	std::srand(std::time(0));
 	this->_hit_points = 60;
 	this->_max_hit_points = 60;
 	this->_energy_points = 120;
@@ -37,7 +37,7 @@ NinjaTrap::~NinjaTrap()
 
 NinjaTrap::NinjaTrap(const NinjaTrap &ninjatrap)
 {
-	std::srand(std::time(nullptr));
+	std::srand(std::time(0));
 	this->_hit_points = ninjatrap._hit_points;
 	this->_max_hit_points = ninjatrap._max_hit_points;
 	this->_energy_points = ninjatrap._energy_points;
@@ -52,7 +52,7 @@ NinjaTrap::NinjaTrap(const NinjaTrap &ninjatrap)
 
 NinjaTrap &NinjaTrap::operator=(const NinjaTrap &ninjatrap)
 {
-	std::srand(std::time(nullptr));
+	std::srand(std::time(0));
 	this->_hit_points = ninjatrap._hit_points;
 	this->_max_hit_points = ninjatrap._max_hit_points;
 	this->_energy_points = ninjatrap._energy_points;

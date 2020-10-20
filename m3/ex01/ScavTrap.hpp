@@ -2,6 +2,8 @@
 # define SCAVTRAP_HPP
 
 # include <iostream>
+# include <cstdlib>
+# include <ctime>
 
 class ScavTrap
 {

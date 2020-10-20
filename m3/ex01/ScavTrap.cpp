@@ -2,7 +2,7 @@
 
 ScavTrap::ScavTrap(const std::string &name) : _hit_points(100), _max_hit_points(100), _energy_points(50), _max_energy_point(50), _level(1), _name(name), _melee_attack_damage(20), _ranged_attack_damage(15), _armor_damage_reduction(3)
 {
-	std::srand(std::time(nullptr));
+	std::srand(std::time(0));
 	std::cout << "Salut l'ami, je suis le gardien de ces lieux, mon nom est " << this->_name << " entre si tu l'ose" << std::endl;
 }
 
@@ -13,7 +13,7 @@ ScavTrap::~ScavTrap()
 
 ScavTrap::ScavTrap(const ScavTrap &scav)
 {
-	std::srand(std::time(nullptr));
+	std::srand(std::time(0));
 	this->_hit_points = scav._hit_points;
 	this->_max_hit_points = scav._max_hit_points;
 	this->_energy_points = scav._energy_points;
@@ -28,7 +28,7 @@ ScavTrap::ScavTrap(const ScavTrap &scav)
 
 ScavTrap &ScavTrap::operator=(const ScavTrap &scavtrap)
 {
-	std::srand(std::time(nullptr));
+	std::srand(std::time(0));
 	this->_hit_points = scavtrap._hit_points;
 	this->_max_hit_points = scavtrap._max_hit_points;
 	this->_energy_points = scavtrap._energy_points;

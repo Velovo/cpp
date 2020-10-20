@@ -2,7 +2,7 @@
 
 FragTrap::FragTrap(const std::string &name)
 {
-	std::srand(std::time(nullptr));
+	std::srand(std::time(0));
 	this->_hit_points = 100;
 	this->_max_hit_points = 100;
 	this->_energy_points = 100;
@@ -22,7 +22,7 @@ FragTrap::~FragTrap()
 
 FragTrap::FragTrap(const FragTrap &fragtrap)
 {
-	std::srand(std::time(nullptr));
+	std::srand(std::time(0));
 	this->_hit_points = fragtrap._hit_points;
 	this->_max_hit_points = fragtrap._max_hit_points;
 	this->_energy_points = fragtrap._energy_points;
@@ -37,7 +37,7 @@ FragTrap::FragTrap(const FragTrap &fragtrap)
 
 FragTrap &FragTrap::operator=(const FragTrap &fragtrap)
 {
-	std::srand(std::time(nullptr));
+	std::srand(std::time(0));
 	this->_hit_points = fragtrap._hit_points;
 	this->_max_hit_points = fragtrap._max_hit_points;
 	this->_energy_points = fragtrap._energy_points;

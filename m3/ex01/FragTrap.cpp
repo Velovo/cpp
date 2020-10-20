@@ -2,7 +2,7 @@
 
 FragTrap::FragTrap(const std::string &name) : _hit_points(100), _max_hit_points(100), _energy_points(100), _max_energy_point(100), _level(1), _name(name), _melee_attack_damage(30), _ranged_attack_damage(20), _armor_damage_reduction(5)
 {
-	std::srand(std::time(nullptr));
+	std::srand(std::time(0));
 	std::cout << "Je me presente, je suis un robot multifonction CL4P-TP, mais mes amis m'apelle " << this->_name << " enfin m'appelleraient s'il en restait encore un en vie, ou si j'en avais" << std::endl;
 }
 
@@ -13,7 +13,7 @@ FragTrap::~FragTrap()
 
 FragTrap::FragTrap(const FragTrap &fragtrap)
 {
-	std::srand(std::time(nullptr));
+	std::srand(std::time(0));
 	this->_hit_points = fragtrap._hit_points;
 	this->_max_hit_points = fragtrap._max_hit_points;
 	this->_energy_points = fragtrap._energy_points;
@@ -28,7 +28,7 @@ FragTrap::FragTrap(const FragTrap &fragtrap)
 
 FragTrap &FragTrap::operator=(const FragTrap &fragtrap)
 {
-	std::srand(std::time(nullptr));
+	std::srand(std::time(0));
 	this->_hit_points = fragtrap._hit_points;
 	this->_max_hit_points = fragtrap._max_hit_points;
 	this->_energy_points = fragtrap._energy_points;

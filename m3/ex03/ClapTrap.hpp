@@ -1,7 +1,9 @@
 #ifndef CLAPTRAP_HPP
 # define CLAPTRAP_HPP
 
-#include <iostream>
+# include <iostream>
+# include <cstdlib>
+# include <ctime>
 
 class ClapTrap
 {

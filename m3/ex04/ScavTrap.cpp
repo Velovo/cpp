@@ -2,7 +2,7 @@
 
 ScavTrap::ScavTrap()
 {
-	std::srand(std::time(nullptr));
+	std::srand(std::time(0));
 	this->_hit_points = 100;
 	this->_max_hit_points = 100;
 	this->_energy_points = 50;
@@ -17,7 +17,7 @@ ScavTrap::ScavTrap()
 
 ScavTrap::ScavTrap(const std::string &name)
 {
-	std::srand(std::time(nullptr));
+	std::srand(std::time(0));
 	this->_hit_points = 100;
 	this->_max_hit_points = 100;
 	this->_energy_points = 50;
@@ -37,7 +37,7 @@ ScavTrap::~ScavTrap()
 
 ScavTrap::ScavTrap(const ScavTrap &scav)
 {
-	std::srand(std::time(nullptr));
+	std::srand(std::time(0));
 	this->_hit_points = scav._hit_points;
 	this->_max_hit_points = scav._max_hit_points;
 	this->_energy_points = scav._energy_points;
@@ -52,7 +52,7 @@ ScavTrap::ScavTrap(const ScavTrap &scav)
 
 ScavTrap &ScavTrap::operator=(const ScavTrap &scavtrap)
 {
-	std::srand(std::time(nullptr));
+	std::srand(std::time(0));
 	this->_hit_points = scavtrap._hit_points;
 	this->_max_hit_points = scavtrap._max_hit_points;
 	this->_energy_points = scavtrap._energy_points;

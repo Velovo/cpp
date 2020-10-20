@@ -3,7 +3,7 @@
 ClapTrap::ClapTrap()
 {
 	std::cout << "ClapTrap mother class constructor called" << std::endl;
-	std::srand(std::time(nullptr));
+	std::srand(std::time(0));
 	this->_hit_points = 0;
 	this->_max_hit_points = 0;
 	this->_energy_points = 0;
@@ -23,7 +23,7 @@ ClapTrap::~ClapTrap()
 ClapTrap::ClapTrap(const ClapTrap &claptrap)
 {
 	std::cout << "ClapTrap mother class constructor called" << std::endl;
-	std::srand(std::time(nullptr));
+	std::srand(std::time(0));
 	this->_hit_points = claptrap._hit_points;
 	this->_max_hit_points = claptrap._max_hit_points;
 	this->_energy_points = claptrap._energy_points;
@@ -38,7 +38,7 @@ ClapTrap::ClapTrap(const ClapTrap &claptrap)
 ClapTrap &ClapTrap::operator=(const ClapTrap &claptrap)
 {
 	std::cout << "ClapTrap mother class constructor called" << std::endl;
-	std::srand(std::time(nullptr));
+	std::srand(std::time(0));
 	this->_hit_points = claptrap._hit_points;
 	this->_max_hit_points = claptrap._max_hit_points;
 	this->_energy_points = claptrap._energy_points;

@@ -2,6 +2,8 @@
 # define FRAGTRAP_HPP
 
 # include <iostream>
+# include <cstdlib>
+# include <ctime>
 
 class FragTrap
 {

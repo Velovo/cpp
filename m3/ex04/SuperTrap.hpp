@@ -6,6 +6,8 @@
 # include "ScavTrap.hpp"
 # include "NinjaTrap.hpp"
 # include <iostream>
+# include <cstdlib>
+# include <ctime>
 
 class SuperTrap : public NinjaTrap, public FragTrap
 {
