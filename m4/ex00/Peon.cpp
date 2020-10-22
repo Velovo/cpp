@@ -21,7 +21,6 @@ Peon::Peon(const Peon &peon) : Victim(peon.getname())
 Peon &Peon::operator=(const Peon &peon)
 {
 	this->_name = peon.getname();
-	std::cout << "Zog zog." << std::endl;
 	return (*this);
 }
 

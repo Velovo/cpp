@@ -21,7 +21,6 @@ Sorcerer &Sorcerer::operator=(const Sorcerer &sorcerer)
 {
 	this->_name = sorcerer._name;
 	this->_title = sorcerer._title;
-	std::cout << this->_name << ", " << this->_title << " is born!" << std::endl;
 	return (*this);
 }
 
