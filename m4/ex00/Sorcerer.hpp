@@ -11,7 +11,7 @@ class Sorcerer
 	std::string _title;
 
 	public:
-	Sorcerer(std::string name, std::string title);
+	Sorcerer(const std::string &name, const std::string &title);
 	~Sorcerer();
 	Sorcerer(const Sorcerer &sorcerer);
 	Sorcerer &operator=(const Sorcerer &sorcerer);

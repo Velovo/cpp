@@ -9,7 +9,7 @@ class Victim
 	std::string	_name;
 
 	public:
-	Victim(std::string name);
+	Victim(const std::string &name);
 	~Victim();
 	Victim(const Victim &victim);
 	Victim &operator=(const Victim &victim);
