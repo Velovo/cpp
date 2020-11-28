@@ -6,6 +6,15 @@
 #include "IMateriaSource.hpp"
 #include "MateriaSource.hpp"
 
+class Fireball : public AMateria
+{
+	public:
+	Fireball() : AMateria("fireball") { };
+	virtual ~Fireball() { };
+	AMateria* clone() const { return (new Fireball); };
+	void use(ICharacter& target) { std::cout << "* shoots a fireball at " << target.getName() <<" *" << std::endl; };
+};
+
 int main()
 {
 	{
@@ -32,17 +41,31 @@ int main()
 	}
 
 	{
-		ICharacter* test = new Character("test");
-		IMateriaSource* src = new MateriaSource();
-		src->learnMateria(new Ice());
-		std::cout << src->createMateria("cure") << std::endl;
-		src->learnMateria(new Cure());
-		test->equip(src->createMateria("cure"));
-		test->use(0, *test);
-		test->use(1, *test);
-		delete test;
-		delete src;
+		// ICharacter* test = new Character("test");
+		// IMateriaSource* src = new MateriaSource();
+		// src->learnMateria(new Ice());
+		// std::cout << src->createMateria("cure") << std::endl;
+		// src->learnMateria(new Cure());
+		// test->equip(src->createMateria("cure"));
+		// test->use(0, *test);
+		// test->use(1, *test);
+		// delete test;
+		// delete src;
 	}
+	ICharacter* test = new Character("test");
+	IMateriaSource* src = new MateriaSource();
+	src->learnMateria(new Ice());
+	src->learnMateria(new Cure());
+	src->learnMateria(new Fireball());
+
+	delete src->createMateria("fireball");
+
+	test->equip(src->createMateria("cure"));
+	test->equip(src->createMateria("ice"));
+	test->equip(src->createMateria("fireball"));
+	test->use(0, *test);
+	test->use(1, *test);
+	test->use(2, *test);
 
 	return 0;
 }

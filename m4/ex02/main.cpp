@@ -4,6 +4,17 @@
 
 #include <iostream>
 
+class Jedi : public ISpaceMarine
+{
+	public:
+	Jedi() { std::cout << "The force awakens" << std::endl; };
+	virtual ~Jedi() { std::cout << "was i your father ? * dies *" << std::endl; };
+	ISpaceMarine *clone() const { return (new Jedi()); };
+	void battleCry() const { std::cout << "DONT LET THE SITH WIN" << std::endl; };
+	void rangedAttack() const { std::cout << "FSHIOU * use the force *" << std::endl; };
+	void meleeAttack() const { std::cout << "zing zing my light saber is so strong" << std::endl; };
+};
+
 int main(void)
 {
 	{
@@ -42,13 +53,16 @@ int main(void)
 		// ISpaceMarine* bob2 = new TacticalMarine;
 		// ISpaceMarine* jim = new AssaultTerminator;
 		ISpaceMarine* jim2 = new AssaultTerminator;
+		ISpaceMarine* luke = new Jedi;
 
 		Squad vlc;
 		Squad vlc2;
 
 		vlc.push(bob);
 		vlc.push(jim2);
-		// vlc2.push(jim);
+
+		vlc2.push(luke);
+		vlc2.getUnit(0)->battleCry();
 		// vlc2.push(bob2);
 
 		vlc2 = vlc;

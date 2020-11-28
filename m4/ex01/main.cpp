@@ -8,6 +8,19 @@
 
 #include <iostream>
 
+class Bazooka : public AWeapon {
+    public:
+    Bazooka() : AWeapon("Bazooka", 40, 100) { };
+    virtual ~Bazooka() { };
+    void attack() const { std::cout << "KABOOM" << std::endl; };
+};
+
+class Blob : public Enemy {
+	public:
+	Blob() : Enemy(20, "Blob") { std::cout << "blob plop" << std::endl; };
+	virtual ~Blob() { std::cout << "splosh" << std::endl; };
+};
+
 int main()
 {
 	{
@@ -62,6 +75,18 @@ int main()
 		delete b;
 		delete pr;
 		delete pf;
-		return 0;
+		// return 0;
+	}
+
+	{
+		Character* main = new Character("test1212");
+		AWeapon *bz = new Bazooka();
+		Enemy *b = new Blob();
+		main->equip(bz);
+		std::cout << *main;
+		main->attack(b);
+		delete main;
+		delete bz;
+		delete b;
 	}
 }

@@ -7,7 +7,7 @@ class TacticalMarine : public ISpaceMarine
 {
 	public:
 	TacticalMarine();
-	~TacticalMarine();
+	virtual ~TacticalMarine();
 	TacticalMarine(const TacticalMarine &tacticalmarine);
 	TacticalMarine &operator=(const TacticalMarine &tacticalmarine);
 

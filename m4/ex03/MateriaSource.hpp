@@ -5,13 +5,13 @@
 # include "IMateriaSource.hpp"
 # include "AMateria.hpp"
 
-# define INV_SIZE 2
+# define INV_SIZE 3
 
 class MateriaSource : public IMateriaSource
 {
 	public:
 	MateriaSource();
-	~MateriaSource();
+	virtual ~MateriaSource();
 	MateriaSource(const MateriaSource &materiasource);
 	MateriaSource &operator=(const MateriaSource &materiasource);
 

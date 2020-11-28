@@ -45,7 +45,7 @@ void Character::attack(Enemy *en)
 		std::cout << "No weapon equipped, can't attack" << std::endl;
 		return ;
 	}
-	if (this->_ap - this->_weapon->getAPCost() > 0)
+	if (this->_ap - this->_weapon->getAPCost() >= 0)
 	{
 		this->_ap = this->_ap - this->_weapon->getAPCost();
 		std::cout << this->getName() << " has attack " << en->getType() << " with a " << this->_weapon->getName() << std::endl;

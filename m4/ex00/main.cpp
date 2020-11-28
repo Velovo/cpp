@@ -3,6 +3,13 @@
 #include "Victim.hpp"
 #include <iostream>
 
+class Goat : public Victim {
+	public:
+	Goat(std::string name) : Victim(name) { std::cout << "MEEEEEH" << std::endl; }
+	~Goat() { std::cout << "AAAAAAAARGH" << std::endl; }
+	void getPolymorphed() const { std::cout << this->_name << " was just polymorphed" << std::endl; }
+};
+
 int	main()
 {
 	{
@@ -18,7 +25,7 @@ int	main()
 	{
 		Sorcerer src("Rob", "The great one");
 		Sorcerer test(src);
-		Peon vic("vic");
+		Goat vic("vic");
 
 		test.polymorph(vic);
 		std::cout << vic << test;

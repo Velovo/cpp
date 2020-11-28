@@ -8,7 +8,7 @@ class SuperMutant : public Enemy
 {
 	public:
 	SuperMutant();
-	~SuperMutant();
+	virtual ~SuperMutant();
 	SuperMutant(const SuperMutant &sm);
 	SuperMutant &operator=(const SuperMutant &sm);
 	void takeDamage(int dmg);

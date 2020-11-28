@@ -14,7 +14,7 @@ class Squad : public ISquad
 {
 	public:
 	Squad(void);
-	~Squad(void);
+	virtual ~Squad(void);
 	Squad(const Squad &squad);
 	Squad(const Squad *squad);
 	Squad &operator=(const Squad &squad);
