@@ -12,15 +12,15 @@ Sorcerer::~Sorcerer()
 
 Sorcerer::Sorcerer(const Sorcerer &sorcerer)
 {
-	this->_name = sorcerer._name;
-	this->_title = sorcerer._title;
+	this->_name = sorcerer.getname();
+	this->_title = sorcerer.gettitle();
 	std::cout << this->_name << ", " << this->_title << " is born!" << std::endl;
 }
 
 Sorcerer &Sorcerer::operator=(const Sorcerer &sorcerer)
 {
-	this->_name = sorcerer._name;
-	this->_title = sorcerer._title;
+	this->_name = sorcerer.getname();
+	this->_title = sorcerer.gettitle();
 	return (*this);
 }
 

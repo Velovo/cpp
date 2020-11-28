@@ -9,8 +9,9 @@ class Victim
 	std::string	_name;
 
 	public:
+	Victim();
 	Victim(const std::string &name);
-	~Victim();
+	virtual ~Victim();
 	Victim(const Victim &victim);
 	Victim &operator=(const Victim &victim);
 	virtual void	getPolymorphed() const;

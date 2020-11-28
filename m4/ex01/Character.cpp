@@ -40,12 +40,21 @@ void Character::equip(AWeapon *weapon)
 
 void Character::attack(Enemy *en)
 {
+	if (this->_weapon == NULL)
+	{
+		std::cout << "No weapon equipped, can't attack" << std::endl;
+		return ;
+	}
 	if (this->_ap - this->_weapon->getAPCost() > 0)
 	{
 		this->_ap = this->_ap - this->_weapon->getAPCost();
 		std::cout << this->getName() << " has attack " << en->getType() << " with a " << this->_weapon->getName() << std::endl;
 		this->_weapon->attack();
 		en->takeDamage(this->_weapon->getDamage());
+	}
+	else
+	{
+		std::cout << "Need more AP soldier" << std::endl;
 	}
 }
 
