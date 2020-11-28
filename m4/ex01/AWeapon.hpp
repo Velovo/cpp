@@ -13,8 +13,6 @@ class AWeapon
 	public:
 	AWeapon(const std::string &name, int apcost, int damage);
 	virtual ~AWeapon();
-	AWeapon(const AWeapon &weapon);
-	AWeapon &operator=(const AWeapon &weapon);
 	const std::string	getName() const;
 	int getAPCost() const;
 	int getDamage() const;

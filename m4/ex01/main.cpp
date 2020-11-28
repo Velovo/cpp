@@ -29,6 +29,7 @@ int main()
 		// std::cout << *moi;
 		// return 0;
 	}
+
 	{
 		Character* main = new Character("test1212");
 		Enemy* a = new RadScorpion();

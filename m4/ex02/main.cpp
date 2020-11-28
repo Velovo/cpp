@@ -39,8 +39,8 @@ int main(void)
 	std::cout << std::endl << std::endl << std::endl;
 	{
 		ISpaceMarine* bob = new TacticalMarine;
-		ISpaceMarine* bob2 = new TacticalMarine;
-		ISpaceMarine* jim = new AssaultTerminator;
+		// ISpaceMarine* bob2 = new TacticalMarine;
+		// ISpaceMarine* jim = new AssaultTerminator;
 		ISpaceMarine* jim2 = new AssaultTerminator;
 
 		Squad vlc;
@@ -48,8 +48,8 @@ int main(void)
 
 		vlc.push(bob);
 		vlc.push(jim2);
-		vlc2.push(jim);
-		vlc2.push(bob2);
+		// vlc2.push(jim);
+		// vlc2.push(bob2);
 
 		vlc2 = vlc;
 

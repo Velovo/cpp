@@ -13,6 +13,7 @@ class Character
 	AWeapon		*_weapon;
 
 	public:
+	Character();
 	Character(const std::string &name);
 	~Character();
 	Character(const Character &character);

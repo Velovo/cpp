@@ -27,7 +27,10 @@ void SuperMutant::takeDamage(int dmg)
 	if (dmg - 3 < 0)
 		return ;
 	else if (this->_hp < dmg - 3)
+	{
 		this->_hp = 0;
+		// std::cout << "Aaargh ..." << std::endl;
+	}
 	else
 		this->_hp = this->_hp - (dmg - 3);
 }
