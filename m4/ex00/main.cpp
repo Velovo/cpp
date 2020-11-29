@@ -6,7 +6,7 @@
 class Goat : public Victim {
 	public:
 	Goat(std::string name) : Victim(name) { std::cout << "MEEEEEH" << std::endl; }
-	~Goat() { std::cout << "AAAAAAAARGH" << std::endl; }
+	virtual ~Goat() { std::cout << "AAAAAAAARGH" << std::endl; }
 	void getPolymorphed() const { std::cout << this->_name << " was just polymorphed" << std::endl; }
 };
 
@@ -21,7 +21,7 @@ int	main()
 		robert.polymorph(jim);
 		robert.polymorph(joe);
 	}
-
+	std::cout << std::endl << std::endl << std::endl;
 	{
 		Sorcerer src("Rob", "The great one");
 		Sorcerer test(src);

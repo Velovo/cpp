@@ -9,10 +9,10 @@
 #include <iostream>
 
 class Bazooka : public AWeapon {
-    public:
-    Bazooka() : AWeapon("Bazooka", 40, 100) { };
-    virtual ~Bazooka() { };
-    void attack() const { std::cout << "KABOOM" << std::endl; };
+	public:
+	Bazooka() : AWeapon("Bazooka", 40, 100) { };
+	virtual ~Bazooka() { };
+	void attack() const { std::cout << "KABOOM" << std::endl; };
 };
 
 class Blob : public Enemy {

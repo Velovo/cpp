@@ -62,10 +62,17 @@ int main()
 
 	test->equip(src->createMateria("cure"));
 	test->equip(src->createMateria("ice"));
-	test->equip(src->createMateria("fireball"));
+	AMateria *t = src->createMateria("fireball");
+	test->equip(t);
 	test->use(0, *test);
 	test->use(1, *test);
 	test->use(2, *test);
+	test->unequip(2);
+	test->use(2, *test); //fait rien ducoup
+
+	delete t;
+	delete test;
+	delete src;
 
 	return 0;
 }

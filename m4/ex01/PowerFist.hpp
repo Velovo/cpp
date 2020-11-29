@@ -6,12 +6,12 @@
 
 class PowerFist : public AWeapon
 {
-    public:
-    PowerFist();
-    virtual ~PowerFist();
-    PowerFist(const PowerFist &pf);
-    PowerFist &operator=(const PowerFist &pf);
-    void attack() const;
+	public:
+	PowerFist();
+	virtual ~PowerFist();
+	PowerFist(const PowerFist &pf);
+	PowerFist &operator=(const PowerFist &pf);
+	void attack() const;
 };
 
 #endif
