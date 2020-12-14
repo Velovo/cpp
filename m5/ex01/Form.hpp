@@ -16,6 +16,7 @@ class Form
 
 	public:
 	Form();
+	~Form();
 	Form(const std::string name, const int g_sign, const int g_exec);
 	Form(const Form &form);
 	Form &operator=(const Form &form);

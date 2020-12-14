@@ -8,6 +8,11 @@ Form::Form(const std::string name, const int g_sign, const int g_exec) : _name(n
 		throw Form::GradeTooLowException();
 }
 
+Form::~Form()
+{
+	return ;
+}
+
 Form::Form(const Form &form) : _name(form._name), _signed(form._signed), _g_sign(form._g_sign), _g_exec(form._g_exec)
 {
 	*this = form;
