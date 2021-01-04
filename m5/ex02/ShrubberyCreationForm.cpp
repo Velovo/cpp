@@ -17,6 +17,7 @@ ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &shrubb
 
 ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationForm &shrubberycreationform)
 {
+	(void)shrubberycreationform;
 	return (*this);
 }
 
@@ -39,7 +40,8 @@ void ShrubberyCreationForm::_execute() const
        .         .   .   000     .        .       .\n\
 .. .. ..................O000O........................ ...... ...";
 
-	std::ofstream test(this->get_target() + "_shrubbery");
+	std::ofstream test;
+	test.open(std::string(this->get_target() + "_shrubbery").c_str());
 	test << tree << std::endl;
 	test.close();
 }

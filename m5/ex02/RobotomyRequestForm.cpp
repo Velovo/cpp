@@ -17,10 +17,11 @@ RobotmyRequestForm::RobotmyRequestForm(const RobotmyRequestForm &robotmyrequestf
 
 RobotmyRequestForm &RobotmyRequestForm::operator=(const RobotmyRequestForm &robotmyrequestform)
 {
+	(void)robotmyrequestform;
 	return (*this);
 }
 
 void RobotmyRequestForm::_execute() const
 {
-	std::cout << "* drill goes \"BRBRBRBRBRBRBBRBRBRBBRBRBRBRBBRBRBRBBRBRBRBRBBRBRBRBRB.BRBRR...BRBRB...\" *" << std::endl;
+	std::cout << "* drill goes \"BRBRBRBRBRBRBBRBRBRBBRBRBRBRBBRBRBRBBRBRBRBRBBRBRBRBRB.BRBRR...BRBRB...\" *" << std::endl << this->get_target() << " has successfully been robotomized" << std::endl;
 }
