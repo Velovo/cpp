@@ -30,7 +30,7 @@ int main(void)
 	}
 	try
 	{
-		Form *form = test.makeForm("i dont exist", "lena");
+		Form *form = test.makeForm("i dont exist", "test");
 		if (form != NULL)
 		{
 			br.signForm(*form);
@@ -42,4 +42,4 @@ int main(void)
 	{
 		std::cerr << e.what() << '\n';
 	}
-	}
+}

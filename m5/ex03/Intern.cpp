@@ -22,10 +22,12 @@ Intern::Intern(const Intern &intern) : _fnbr(FNBR)
 
 Intern &Intern::operator=(const Intern &intern)
 {
-	(void)intern;
-	this->_form[0] = new ShrubberyCreationForm("");
-	this->_form[1] = new RobotmyRequestForm("");
-	this->_form[2] = new PresidentialPardonForm("");
+	if (this != &intern)
+	{
+		this->_form[0] = new ShrubberyCreationForm("");
+		this->_form[1] = new RobotmyRequestForm("");
+		this->_form[2] = new PresidentialPardonForm("");
+	}
 	return (*this);
 }
 

@@ -33,7 +33,7 @@ bool Form::beSigned(const Bureaucrat &bureaucrat)
 		return (true);
 	}
 	else
-		return (false);
+		throw Bureaucrat::GradeTooLowException();
 }
 
 const std::string Form::getName() const

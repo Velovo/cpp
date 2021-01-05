@@ -72,14 +72,14 @@ Bureaucrat::GradeTooHighException::~GradeTooHighException() throw() { }
 
 const char* Bureaucrat::GradeTooHighException::what() const throw()
 {
-	return ("Something's wrong, you tried to raise the grade too much");
+	return ("Something's wrong, grade is too high");
 }
 
 Bureaucrat::GradeTooLowException::~GradeTooLowException() throw() { }
 
 const char* Bureaucrat::GradeTooLowException::what() const throw()
 {
-	return ("Something's wrong, you tried to lower the grade too much");
+	return ("Something's wrong, grade is too low");
 }
 
 std::ostream &operator<<(std::ostream &os, const Bureaucrat &bureaucrat)

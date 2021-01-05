@@ -4,7 +4,7 @@ int main(void)
 {
 	try
 	{
-		for (int i = 1; i < 150; ++i)
+		for (int i = 1; i <= 150; ++i)
 			Bureaucrat hey = Bureaucrat("test", i);
 	}
 	catch (std::exception & e)
@@ -16,7 +16,7 @@ int main(void)
 	{
 		Bureaucrat hey = Bureaucrat("test", 2);
 		hey.inc_grade();
-		std::cout << "grade: " << hey.getGrade() << std::endl;
+		std::cout << hey;
 		hey.inc_grade();
 	}
 	catch(const std::exception& e)
@@ -35,6 +35,6 @@ int main(void)
 	{
 		std::cerr << e.what() << '\n';
 	}
-	std::cout << "error, grade would have been 150" << std::endl;
+	std::cout << "error, grade would have been 151" << std::endl;
 	return (0);
 }
