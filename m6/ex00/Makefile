@@ -1,4 +1,4 @@
-NAME			= scal
+NAME			= convert
 
 SRC				=	./main.cpp\
 					./scalar_conversion.cpp
