@@ -60,7 +60,7 @@ Scal::operator float(void) const
 	{
 		throw Scal::Conversionexception();
 	}
-	return static_cast<float> (f);	
+	return static_cast<float> (f);
 }
 
 Scal::operator double(void) const
