@@ -1,4 +1,4 @@
-NAME			= iter
+NAME			= array
 
 SRC				=	./main.cpp
 
@@ -8,7 +8,7 @@ ROAD_S			= $(SRC)
 
 ROAD_O			= $(OBJ)
 
-HEADER			=	./iter.hpp
+HEADER			=	./Array.hpp
 
 CXX				= clang++
 
