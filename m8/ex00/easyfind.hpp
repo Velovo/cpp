@@ -5,18 +5,20 @@
 #include <algorithm>
 
 template<class T>
-int easyfind(T containers, int find)
+typename T::iterator easyfind(T &containers, int find)
 {
 	try
 	{
-		if (std::find(containers.begin(), containers.end(), find) != containers.end())
-			return std::find(containers.begin(), containers.end(), find) - containers.begin();
+        typename T::iterator ret;
+
+		if ((ret = std::find(containers.begin(), containers.end(), find)) != containers.end())
+			return ret;
 	}
 	catch(const std::exception& e)
 	{
 		std::cerr << e.what() << '\n';
 	}
-	return -1;
+    throw std::exception();
 }
 
 #endif
