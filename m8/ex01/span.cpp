@@ -11,7 +11,9 @@ Span::Span(const Span &span)
 
 Span &Span::operator=(const Span &span)
 {
-	(void)span;
+	if (this->v.size() < span._max)
+		throw std::exception();
+	this->v = span.v;
 	return (*this);
 }
 
