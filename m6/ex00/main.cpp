@@ -1,6 +1,7 @@
 #include <iostream>
 #include <iomanip>
 #include <string>
+#include <cstring>
 #include "scalar_conversion.hpp"
 
 int main(int argc, char **argv)
@@ -14,7 +15,7 @@ int main(int argc, char **argv)
 	for (int i = 1; i < argc; ++i)
 	{
 		std::string inp(argv[i]);
-		if (strlen(argv[i]) == 3 && argv[i][0] == '\'' && argv[i][2] == '\'')
+		if (std::strlen(argv[i]) == 3 && argv[i][0] == '\'' && argv[i][2] == '\'')
 			inp = std::to_string(argv[i][1]);
 		Scal scal(inp);
 		try
