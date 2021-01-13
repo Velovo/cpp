@@ -16,7 +16,11 @@ int main(int argc, char **argv)
 	{
 		std::string inp(argv[i]);
 		if (std::strlen(argv[i]) == 3 && argv[i][0] == '\'' && argv[i][2] == '\'')
-			inp = std::to_string(argv[i][1]);
+		{
+			std::stringstream ss;
+			ss << static_cast<int> (argv[i][1]);
+			inp = ss.str();
+		}
 		Scal scal(inp);
 		try
 		{

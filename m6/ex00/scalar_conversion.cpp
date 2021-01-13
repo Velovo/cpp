@@ -65,7 +65,7 @@ Scal::operator float(void) const
 
 Scal::operator double(void) const
 {
-	float d;
+	double d;
 
 	try
 	{
