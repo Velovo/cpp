@@ -20,6 +20,15 @@ int main(void)
 {
 	try
 	{
+		const Array<int> a = Array<int> (2);
+		std::cout << a[0] << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+	try
+	{
 		Array<Awesome> test (2);
 
 		test[0].set_value(10);
@@ -38,7 +47,8 @@ int main(void)
 		Array<int> test(20);
 
 		test[0] = 0x41;
-		std::cout << test[0] << std::endl << test[19] << std::endl;
+		std::cout << test[0] << std::endl;
+		std::cout << test[19] << std::endl;
 	}
 	catch(const std::exception& e)
 	{
@@ -58,8 +68,10 @@ int main(void)
 	try
 	{
 		Array<int> test = Array<int> ();
+		Array<int> test2 = Array<int> (12);
 
-		std::cout << test.len() << std::endl;
+		std::cout << test.size() << std::endl;
+		std::cout << test2.size() << std::endl;
 		test[0] = 0x41;
 	}
 	catch(const std::exception& e)

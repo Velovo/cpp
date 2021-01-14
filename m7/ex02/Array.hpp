@@ -35,8 +35,17 @@ class Array
 			_n = array._n;
 			return (*this);
 		}
-		unsigned int len() { return _n; };
+		unsigned int size()
+		{
+			return _n;
+		}
 		T &operator[](unsigned int n)
+		{
+			if (n >= _n)
+				throw std::exception();
+			return (_array[n]);
+		}
+		const T &operator[](unsigned int n) const
 		{
 			if (n >= _n)
 				throw std::exception();
