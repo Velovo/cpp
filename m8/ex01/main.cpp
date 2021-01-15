@@ -2,8 +2,6 @@
 
 int main(void)
 {
-	Span sp(13);
-
 	try
 	{
 		Span sp = Span(5);
@@ -18,8 +16,8 @@ int main(void)
 	catch(const std::exception& e) { std::cerr << e.what() << '\n'; }
 	try
 	{
-		Span sp = Span(10000);
-		for (int i = 0; i < 10000; ++i)
+		Span sp = Span(100000);
+		for (int i = 0; i < 100000; ++i)
 			sp.addNumber(i);
 		std::cout << sp.shortestSpan() << std::endl;
 		std::cout << sp.longestSpan() << std::endl;

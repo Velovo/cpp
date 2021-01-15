@@ -9,7 +9,7 @@ typename T::iterator easyfind(T &containers, int find)
 {
 	try
 	{
-        typename T::iterator ret;
+		typename T::iterator ret;
 
 		if ((ret = std::find(containers.begin(), containers.end(), find)) != containers.end())
 			return ret;
@@ -18,7 +18,7 @@ typename T::iterator easyfind(T &containers, int find)
 	{
 		std::cerr << e.what() << '\n';
 	}
-    throw std::exception();
+	throw std::exception();
 }
 
 #endif

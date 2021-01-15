@@ -35,6 +35,9 @@ int main(void)
 			std::cout << *ite << std::endl;
 			--ite;
 		}
+		std::cout << std::endl;
+		std::stack<int> s(mstack);
+		std::cout << s.size() << std::endl;
 	}
 	catch(const std::exception& e) { std::cerr << e.what() << '\n'; }
 	std::cout << std::endl << std::endl << std::endl;
@@ -60,8 +63,5 @@ int main(void)
 	}
 	catch(const std::exception& e) { std::cerr << e.what() << '\n'; }
 	
-	
-	// std::stack<int> s(mstack);
-	// std::cout << s.size() << std::endl;
 	return 0;
 }

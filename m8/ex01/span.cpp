@@ -40,11 +40,11 @@ unsigned int Span::shortestSpan()
 		throw std::exception();
 	copy = this->v;
 	std::sort(copy.begin(), copy.end());
-	ret = abs(static_cast<long> (copy[1]) - static_cast<long> (copy[0]));
+	ret = std::abs(static_cast<long> (copy[1]) - static_cast<long> (copy[0]));
 	for (unsigned int i = 0; i + 1 < copy.size(); ++i)
 	{
-		if (abs(static_cast<long> (copy[i + 1]) - static_cast<long> (copy[i])) < ret)
-			ret = abs(static_cast<long> (copy[i + 1]) - static_cast<long> (copy[i]));
+		if (std::abs(static_cast<long> (copy[i + 1]) - static_cast<long> (copy[i])) < ret)
+			ret = std::abs(static_cast<long> (copy[i + 1]) - static_cast<long> (copy[i]));
 	}
 	return ret;
 }
@@ -62,5 +62,5 @@ unsigned int Span::longestSpan()
 
 
 
-	return abs(*std::max_element(v.begin(), v.end()) - *std::min_element(v.begin(), v.end()));
+	return std::abs(*std::max_element(v.begin(), v.end()) - *std::min_element(v.begin(), v.end()));
 }
