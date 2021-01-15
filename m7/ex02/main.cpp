@@ -41,7 +41,6 @@ int main(void)
 	{
 		std::cerr << e.what() << '\n';
 	}
-	
 	try
 	{
 		Array<int> test(20);

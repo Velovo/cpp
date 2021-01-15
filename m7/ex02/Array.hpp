@@ -41,13 +41,13 @@ class Array
 		}
 		T &operator[](unsigned int n)
 		{
-			if (n >= _n)
+			if (n >= _n || n < 0)
 				throw std::exception();
 			return (_array[n]);
 		}
 		const T &operator[](unsigned int n) const
 		{
-			if (n >= _n)
+			if (n >= _n || n < 0)
 				throw std::exception();
 			return (_array[n]);
 		}
