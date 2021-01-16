@@ -4,19 +4,6 @@ Span::~Span() { };
 
 Span::Span(unsigned int n) : _max(n) { };
 
-Span::Span(const Span &span)
-{
-	*this = span;
-}
-
-Span &Span::operator=(const Span &span)
-{
-	if (this->v.size() < span._max)
-		throw std::exception();
-	this->v = span.v;
-	return (*this);
-}
-
 void Span::addNumber(int nbr)
 {
 	if (this->v.size() == this->_max)

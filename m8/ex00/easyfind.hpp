@@ -16,7 +16,7 @@ typename T::iterator easyfind(T &containers, int find)
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << e.what() << '\n';
+		throw std::exception();
 	}
 	throw std::exception();
 }

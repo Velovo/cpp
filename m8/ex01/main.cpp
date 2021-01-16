@@ -46,6 +46,22 @@ int main(void)
 
 		sp.addNumber(8);
 		sp.addNumber(13);
+		sp.addNumber(47);
+		sp.addNumber(27);
+		sp.addNumber(5);
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+	
+	try
+	{
+		std::vector<int> tmp;
+		Span sp = Span(4);
+
+		sp.addNumber(8);
+		sp.addNumber(13);
 		
 		tmp.push_back(21);
 		tmp.push_back(34);

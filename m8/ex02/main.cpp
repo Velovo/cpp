@@ -37,10 +37,10 @@ int main(void)
 		}
 		std::cout << std::endl;
 		std::stack<int> s(mstack);
-		std::cout << s.size() << std::endl;
+		std::cout << "len of stack: " << s.size() << std::endl;
 	}
 	catch(const std::exception& e) { std::cerr << e.what() << '\n'; }
-	std::cout << std::endl << std::endl << std::endl;
+	std::cout << std::endl << "test with a class stack:" << std::endl;
 	try
 	{
 		MutantStack<Test1212> mystack;
@@ -56,12 +56,41 @@ int main(void)
 			std::cout << it->_n << std::endl;
 			++it;
 		}
-		std::cout << std::endl << std::endl;
+		std::cout << std::endl;
 		MutantStack<Test1212> tmp(mystack);
 		std::cout << mystack.size() << std::endl;
 		std::cout << tmp.size() << std::endl;
 	}
 	catch(const std::exception& e) { std::cerr << e.what() << '\n'; }
-	
+	std::cout << std::endl << "original main:" << std::endl;
+	try
+	{
+		MutantStack<int> mstack;
+		mstack.push(5);
+		mstack.push(17);
+		std::cout << mstack.top() << std::endl;
+		mstack.pop();
+		std::cout << mstack.size() << std::endl;
+		mstack.push(3);
+		mstack.push(5);
+		mstack.push(737);
+		//[...]
+		mstack.push(0);
+		MutantStack<int>::iterator it = mstack.begin();
+		MutantStack<int>::iterator ite = mstack.end();
+		++it;
+		--it;
+		while (it != ite)
+		{
+			std::cout << *it << std::endl;
+			++it;
+		}
+		std::stack<int> s(mstack);
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+
 	return 0;
 }
